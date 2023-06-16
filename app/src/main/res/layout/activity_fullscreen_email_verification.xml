@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:theme="@style/ThemeOverlay.Vibrate.FullscreenContainer"
+    tools:context=".FullscreenActivityEmailVerification">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/emailSent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/profile"
+            android:src="@drawable/paper_plane_2563"
+            android:foregroundTint="@color/darkBlur"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:keepScreenOn="true"
+            android:text="Email not verified yet"
+            android:textColor="@color/darkBlur"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailSent"/>
+
+        <TextView
+            android:id="@+id/justText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:text="To confirm your email Address tap on the link we have sent you to your inbox"
+            android:textColor="@color/Grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fullscreen_content"/>
+
+        <TextView
+            android:id="@+id/emailtxt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:text="example@gmail.com"
+            android:textColor="@color/Grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/justText"/>
+
+        <TextView
+            android:id="@+id/emailtxtupdate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:clickable="true"
+            android:textStyle="bold"
+            android:text="Update Email"
+            android:textColor="@color/darkBlur"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailtxt"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/updateEmailfield"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:hint="example@gmail.com"
+            android:textColorHint="@color/Grey"
+            android:textColor="@color/Grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/updateEmail"
+            app:layout_constraintTop_toBottomOf="@id/emailtxt"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/updateEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:textStyle="bold"
+            android:hint="Submit"
+            android:textColor="@color/darkBlur"
+            app:layout_constraintStart_toEndOf="@id/updateEmailfield"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/updateEmailfield"
+            app:layout_constraintBottom_toBottomOf="@id/updateEmailfield"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/open_Gmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="Open Gmail"
+            android:textColor="@color/darkBlur"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/updateEmail"/>
+
+        <TextView
+            android:id="@+id/notreceivedText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:text="Didn't receive email yet ?"
+            android:textColor="@color/Grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/open_Gmail"/>
+
+        <TextView
+            android:id="@+id/resentEmailbutton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:layout_marginTop="15dp"
+            android:clickable="true"
+            android:text="resend email"
+            android:textColor="@color/darkBlur"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notreceivedText"/>
+
+        <ProgressBar
+            android:id="@+id/progressB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/resentEmailbutton"
+            app:layout_constraintEnd_toEndOf="@id/resentEmailbutton"
+            app:layout_constraintTop_toTopOf="@id/resentEmailbutton"
+            app:layout_constraintBottom_toBottomOf="@id/resentEmailbutton"/>
+
+        <TextView
+            android:id="@+id/useDifferentEmail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:text="use different email Account"
+            android:textColor="@color/Grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/resentEmailbutton"/>
+
+        <TextView
+            android:id="@+id/logoutBut"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:keepScreenOn="true"
+            android:clickable="true"
+            android:text="logout"
+            android:textColor="@color/ErrorRed"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/useDifferentEmail"/>
+
+        <Button
+            android:id="@+id/dummy_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:text="already verified.."
+            android:textColor="@color/darkBlur"
+            app:layout_constraintTop_toBottomOf="@id/logoutBut"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</FrameLayout>

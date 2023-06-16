@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <!-- A numeric value is specified in "radius" for demonstrative purposes only,
+                  it should be @dimen/val_name -->
+
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    <!-- To keep the TOP-LEFT corner UNROUNDED set both OPPOSITE offsets (bottom+right): -->
+
+</selector>

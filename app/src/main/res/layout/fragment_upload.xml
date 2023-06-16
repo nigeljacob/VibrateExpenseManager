@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Expense"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UploadFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/SwipetoRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    <ScrollView
+        android:id="@+id/scrollViewer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode = "never"
+        tools:ignore="MissingConstraints">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/View"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".MainActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/youSpentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You've spent"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/errorMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/total_bg"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="@color/ErrorRed"
+                app:layout_constraintStart_toStartOf="@id/information"
+                app:layout_constraintEnd_toEndOf="@id/information"
+                app:layout_constraintTop_toBottomOf="@id/youSpentText"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/error"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/baseline_error_24"
+                    app:layout_constraintStart_toStartOf="@id/errorMessage"
+                    app:layout_constraintTop_toTopOf="@id/errorMessage"
+                    app:layout_constraintBottom_toBottomOf="@id/errorMessage"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Expense seems to be higher than your income"
+                    android:textStyle="bold"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#AB1B1B"
+                    app:layout_constraintStart_toEndOf="@id/error"
+                    app:layout_constraintTop_toTopOf="@id/errorMessage"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/TopLayot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/information"
+                app:layout_constraintEnd_toEndOf="@id/information"
+                app:layout_constraintTop_toBottomOf="@id/errorMessage">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp"
+                    android:layout_weight="0"
+                    android:scrollbars="none"
+                    android:fillViewport="true">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Card"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp" >
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/ProgressCardView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <ProgressBar
+                                android:id="@+id/progress_bar"
+                                android:layout_width="200dp"
+                                android:layout_height="200dp"
+                                style="@style/CircularDeterminateProgressBar"
+                                android:progress="0"
+                                android:layout_gravity="center"/>
+
+                            <TextView
+                                android:id="@+id/percentage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0%"
+                                android:textSize="40dp"
+                                android:fontFamily="monospace"
+                                android:textStyle="bold"
+                                android:layout_gravity="center"/>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/ProgressCardView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="30dp"
+                            android:backgroundTint="@color/lightGrey"
+                            android:layout_margin="10dp"
+                            app:cardCornerRadius="10dp"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/ProgressCardView"
+                            app:layout_constraintBottom_toBottomOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/Card2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" >
+
+                                <ProgressBar
+                                    android:id="@+id/prgress_bar2"
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    style="@style/CircularDeterminateProgressBar"
+                                    android:progress="0"
+                                    android:layout_gravity="center"
+                                    android:visibility="invisible"/>
+
+                                <TextView
+                                    android:id="@+id/currency"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="0.00"
+                                    android:textSize="20dp"
+                                    android:fontFamily="monospace"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="@+id/Card2"
+                                    app:layout_constraintEnd_toEndOf="@+id/Card2"
+                                    app:layout_constraintTop_toTopOf="@+id/Card2"
+                                    app:layout_constraintBottom_toBottomOf="@id/Card2"/>
+
+                                <TextView
+                                    android:id="@+id/percentageText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Total Expense"
+                                    android:fontFamily="sans-serif"
+                                    app:layout_constraintStart_toStartOf="@id/Card2"
+                                    app:layout_constraintEnd_toEndOf="@id/Card2"
+                                    app:layout_constraintTop_toBottomOf="@id/currency"
+                                    app:layout_constraintBottom_toBottomOf="@id/Card2"
+                                    />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </HorizontalScrollView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="40dp"
+            android:scrollbars="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/information"
+            android:padding="20dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <Button
+            android:id="@+id/addExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttonbackground"
+            android:text="+ Add Expense"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/darkBlur"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

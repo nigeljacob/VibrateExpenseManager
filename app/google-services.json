@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "751035656059",
+    "project_id": "vibrate-b6190",
+    "storage_bucket": "vibrate-b6190.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:751035656059:android:54d07bff7e59b046dc3fde",
+        "android_client_info": {
+          "package_name": "com.example.vibrate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "751035656059-llulacp19n6b23busufd3s5lthbp9s1u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDozsVg1Tkftz989XBQYv3c-f2_2_KG31I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "751035656059-llulacp19n6b23busufd3s5lthbp9s1u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
